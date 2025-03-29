@@ -1,0 +1,13 @@
+target/
+build/
+*.xml
+.idea/
+.vscode/
+*.log
+logs/
+.DS_Store
+Thumbs.db
+.env
+.mvn/
+*.class
+surefire-reports/
