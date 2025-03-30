@@ -15,7 +15,19 @@ public class SeatController {
     }
 
     @GetMapping("/seats/{flightId}")
-    public List<Seat> getSeatsForFlight(@PathVariable Long flightId) {
+        public List<Seat> getSeatsForFlight(@PathVariable Long flightId) {
         return seatService.getSeatsForFlight(flightId);
+    }
+
+    @GetMapping("/seats/filter/{flightId}")
+        public List<Seat> recommendSeats(
+        @PathVariable Long flightId,
+        @RequestParam int numberOfTickets,
+        @RequestParam(required = false, defaultValue = "false") boolean window,
+        @RequestParam(required = false, defaultValue = "false") boolean extraLegroom,
+        @RequestParam(required = false, defaultValue = "false") boolean closeToExit,
+        @RequestParam(required = false, defaultValue = "false") boolean sideBySide)
+        {
+        return seatService.recommendSeats(flightId, numberOfTickets, window, extraLegroom, closeToExit, sideBySide);
     }
 }
