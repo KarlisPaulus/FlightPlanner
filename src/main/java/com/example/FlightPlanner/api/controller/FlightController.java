@@ -1,6 +1,7 @@
 package com.example.FlightPlanner.api.controller;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,12 @@ public class FlightController {
     public List<Flight> filterFlights(
             @RequestParam(required = false) String destination, 
             @RequestParam(required = false) String date,
-            @RequestParam(required = false) Integer maxPrice) {
+            @RequestParam(required = false) Integer maxPrice, 
+            @RequestParam(required = false) String departureTime,
+            @RequestParam(required = false) String arrivalTime) {
         LocalDate flightDate = (date != null) ? LocalDate.parse(date) : null;
-        return flightService.findFlights(destination, flightDate, maxPrice);
+        LocalTime departTime = (departureTime != null) ? LocalTime.parse(departureTime) : null;
+        LocalTime arrTime = (arrivalTime != null) ? LocalTime.parse(arrivalTime) : null;
+        return flightService.findFlights(destination, flightDate, maxPrice, departTime, arrTime);
     }
 }

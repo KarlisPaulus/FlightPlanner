@@ -2,6 +2,7 @@ package com.example.FlightPlanner.api.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,7 +15,8 @@ public class Flight {
     
     private String destination;
     private LocalDate date;
-    private String time;
+    private LocalTime departureTime;
+    private LocalTime arrivalTime;
     private Integer price;
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -23,17 +25,19 @@ public class Flight {
 
     public Flight() {}
 
-    public Flight(String destination, LocalDate date, String time, Integer price) {
+    public Flight(String destination, LocalDate date, LocalTime departureTime, LocalTime arrivalTime, Integer price) {
         this.destination = destination;
         this.date = date;
-        this.time = time;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
         this.price = price;
     }
 
     public Long getId() {return id; }
     public String getDestination() {return destination; }
     public LocalDate getDate() {return date; }
-    public String getTime() {return time; }
+    public LocalTime getDepartureTime() { return departureTime; }
+    public LocalTime getArrivalTime() { return arrivalTime; }
     public Integer getPrice() {return price; }
     public List<Seat> getSeats() {return seats; }
 }

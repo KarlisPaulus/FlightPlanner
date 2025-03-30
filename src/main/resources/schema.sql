@@ -2,7 +2,8 @@ CREATE TABLE flight (
     id INT PRIMARY KEY,
     destination VARCHAR(255),
     date DATE,
-    time VARCHAR(50),
+    departure_time TIME,
+    arrival_time TIME,
     price DECIMAL(10, 2)
 );
 
