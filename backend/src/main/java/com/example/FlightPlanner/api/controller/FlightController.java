@@ -11,6 +11,7 @@ import com.example.FlightPlanner.service.FlightService;
 
 @RestController
 @RequestMapping("/flights")
+@CrossOrigin(origins = "http://localhost:3000")
 public class FlightController {
     private final FlightService flightService;
 

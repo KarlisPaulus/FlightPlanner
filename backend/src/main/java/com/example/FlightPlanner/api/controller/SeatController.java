@@ -7,6 +7,8 @@ import com.example.FlightPlanner.service.SeatService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/seats")
+@CrossOrigin(origins = "http://localhost:3000")
 public class SeatController {
     private final SeatService seatService;
 
@@ -14,12 +16,12 @@ public class SeatController {
         this.seatService = seatService;
     }
 
-    @GetMapping("/seats/{flightId}")
+    @GetMapping("/{flightId}")
         public List<Seat> getSeatsForFlight(@PathVariable Long flightId) {
         return seatService.getSeatsForFlight(flightId);
     }
 
-    @GetMapping("/seats/filter/{flightId}")
+    @GetMapping("/filter/{flightId}")
         public List<Seat> recommendSeats(
         @PathVariable Long flightId,
         @RequestParam int numberOfTickets,
