@@ -1,0 +1,25 @@
+Backend
+Valmis:
+Kõik API lõpp-punktid lendude leidmiseks ja istmekohtade filtreerimiseks on implementeeritud.
+Lennuandmed filtreeritakse korrektselt kasutaja sisendi alusel (sihtkoht, kuupäev, hind, väljumisaeg, saabumisaeg).
+Istmekohtade filtreerimise loogika ( akna all, rohkem jalaruumi, lähedal väljapääsule, kõrvuti istmed (alates 2 piletist)) töötab õigesti.
+Puudulik:
+Puudub vabade istmekohtade genereerimine. Hetkel on istmekohad eelnevalt andmebaasis määratud. Tulevikus tahaks päris lendude andmed saada API kaudu.
+Kõige keerulisem oli kõrvuti olevate istmete välja filtreerimise loogika, kus pidin arvestama kasutaja pileti valikut.
+Kasutasin selle jaoks AI abi.
+Koodijuppide kommentaarid puudulikud.
+
+Frontend
+Valmis:
+Lendude list, Istmekohtade filtreerimine,
+Puudu:
+Lendude filtreerimine on tegemata, mis tähendab, et kasutajad ei saa lende filtreerida (sihtkoht, kuupäev, hind, väljumisaeg, saabumisaeg).
+Soovitavate istmekohtade plaan puudu.
+Aja puuduse tõttu ei jõudnud ma frontendi lõpuni teha ja kasutasin efektiivsemaks ajakasutamiseks AI tööriistu, 
+et aidata teatud osade kirjutamisega. Kuna mul pole Reacti kogemust, oli esiplaani arendamine keerulisem 
+ja kasutasin Reacti spetsiifilistemate kohtade jaoks abi.
+Koodijuppide kommentaarid puudulikud.
+
+Kokku läks projekti tegemiseks umbes 16 tundi, andsin selle aja jooksul endast parima. Kuigi mõned funktsioonid on endiselt puudulikud, 
+olen põhifunktsioonid backendis õigesti tööle saanud.
+Loodan, et saan projekti edasi arendada pärast tagasiside saamist.
